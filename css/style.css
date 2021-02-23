@@ -17,7 +17,7 @@ body {
     text-align: center;
     padding: 30px 0;
 }
-.image {
+.image_null {
     height: 300px;
     width: 300px;
     background-image: url(../img/dado.png);

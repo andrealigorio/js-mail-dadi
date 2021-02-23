@@ -8,6 +8,18 @@ start.addEventListener("click",
         var playerName = document.getElementById("name_player").value;
         document.getElementById("player").innerHTML = playerName;
         
+        //RESET DEI RISULTATI OGNI VOLTA CHE SI PREME START
+        document.getElementById("player_win").innerHTML = "";
+        document.getElementById("cpu_win").innerHTML = "";
+
+        //ASSEGNO ALLE VARIABILI DICE E DICETWO LA CLASSE IMAGE
+        //IN MODO DA AZZERARE OGNI VOLTA CHE PREMO START
+        var dice = document.getElementById("dice");
+        dice.className = "image";
+
+        var diceTwo = document.getElementById("dice_two");
+        diceTwo.className = "image";
+
         //CONTROLLO SE E' STATO INSERITO UN NOME USER IN INPUT
         if (playerName == "") {
             playerName = "User";
@@ -16,15 +28,12 @@ start.addEventListener("click",
         //CALCOLO IL PRIMO NUMERO RANDOM
         var firstNumber = Math.floor(Math.random()*6) + 1;
         
-        //CREO UNA VARIABILE DADO E MODIFICO LA CLASSE AGGIUNGENDO IL NUMERO RANDOM
-        //IN MODO DA PRELEVARE LA FACCIA DEL DADO CORRISPONDENTE DAL CSS
-        var dice = document.getElementById("dice");
+        //CAMBIO CLASSE IMAGE AGGIUNGENDO IL NUMERO RANDOM USCITO
         dice.className = dice.classList + firstNumber;
         
         //RIPETO STESSA PROCEDURA PER IL SECONDO DADO
         var secondNumber = Math.floor(Math.random() * 6) + 1;
         
-        var diceTwo = document.getElementById("dice_two");
         diceTwo.className = diceTwo.classList + secondNumber;
 
         //CONTROLLO QUALE DEI 2 DADI VINCE
